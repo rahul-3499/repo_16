@@ -3,6 +3,8 @@ from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from .models import Employee
 from django.urls import reverse_lazy
 
+#views
+
 class EmployeeListView(ListView):
     model = Employee
 
