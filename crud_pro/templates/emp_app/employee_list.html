@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+
+{% block title %}
+    <title>EMPLOYEE FORM</title>
+{% endblock %}
+
+{% block content %}
+    <table class = 'table table-striped'>
+        <thead>
+            <tr>
+                <th>EID</th>
+                <th>FIRST NAME</th>
+                <th>LAST NAME</th>
+                <th>CITY</th>
+            </tr>
+        </thead>
+        <tbody>
+            <h4><center>SHOW EMPLOYEE</center></h4>
+            {% for i in object_list %}
+                <tr>
+                    <td>{{i.eid}}</td>
+                    <td>{{i.fname}}</td>
+                    <td>{{i.lname}}</td>
+                    <td>{{i.city}}</td>
+                    <td>
+                        <a href = "{% url 'update_url' i.id %}"><button class = 'btn btn-outline-warning btn-sm'>UPDATE</button></a>
+                        <a href = "{% url 'delete_url' i.id %}"><button class = 'btn btn-outline-danger btn-sm'>DELETE</button></a>
+                    </td>
+                </tr>
+
+            {% endfor %}
+        </tbody>
+
+    </table>
+{% endblock %}
